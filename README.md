@@ -59,19 +59,22 @@ http://127.0.0.1:8000/docs
 
 * FastAPI API included
 
-##AI Usage (Example Prompts)
+## AI Usage (Example Prompts)
 
 During development, I used AI tools (ChatGPT and Claude) to better understand concepts, debug issues, and improve the implementation.
 
 Some example prompts:
 
-How should I structure a Python project with CLI and PostgreSQL?
-How do I implement CRUD operations using psycopg?
-How can I create a transaction that inserts an assessment with multiple scores?
-How do I build FastAPI endpoints using request body validation (Pydantic)?
-Why am I getting an email-validator error when using EmailStr?
-How do I properly set up and use a Python virtual environment?
-How do I test FastAPI endpoints using the /docs interface?
+- How do I connect Python to a PostgreSQL database using psycopg?
+- What is the best way to structure database queries in a separate file?
+- How do I handle errors like duplicate email insertion in PostgreSQL?
+- How do transactions work in psycopg and when should I use them?
+- How do I design a schema for assessments and scores?
+- How do I validate request data in FastAPI using Pydantic models?
+- What is the difference between query parameters and request body in FastAPI?
+- How do I return proper HTTP status codes in FastAPI?
+- How do I test API endpoints using Swagger UI (/docs)?
+- How do I debug issues when FastAPI server is not starting?
 
 ## What Was Challenging
 
