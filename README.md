@@ -5,12 +5,12 @@ It includes both a CLI (command line interface) and a FastAPI backend.
 
 ## Features
 
-- Add, list, update, and delete mentees
-- Command-line interface (CLI) using argparse
-- PostgreSQL database connection
-- Docker for database setup
-- Transactions (assessment + scores)
-- FastAPI API with interactive docs
+* Add, list, update, and delete mentees
+* Command-line interface (CLI) using argparse
+* PostgreSQL database connection
+* Docker for database setup
+* Transactions (assessment + scores)
+* FastAPI API with interactive docs
 
 ## Setup
 
@@ -21,6 +21,7 @@ docker compose up -d
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
 ## How to Run
 
@@ -29,22 +30,39 @@ pip install -r requirements.txt
 ```bash
 python3 app.py mentee add --name "Vesa" --email "vesa@test.com" --cohort "2026"
 python3 app.py mentee list
+python3 app.py mentee update --id 1 --cohort "2027"
+python3 app.py mentee delete --id 1
+```
+
+### API
+
+```bash
+uvicorn api:app --reload
+```
+
+Open in browser:
+http://127.0.0.1:8000/docs
 
 ## Level Completed
 
-✔ Level 1  
-✔ Level 2  
+* Level 1
 
-- CRUD operations implemented  
-- File structure split (db.py, queries.py, cli.py, app.py)  
-- Transactions (assessment + scores)  
-- CLI using argparse  
-- FastAPI API included  
+* Level 2
+
+* CRUD operations implemented
+
+* File structure split (db.py, queries.py, cli.py, app.py)
+
+* Transactions (assessment + scores)
+
+* CLI using argparse
+
+* FastAPI API included
 
 ## What Was Challenging
 
-The most challenging part was setting up the PostgreSQL connection and making sure the environment variables matched the Docker configuration.  
-I initially faced issues with database authentication and had to reset the Docker volume to fix it.  
-Understanding how argparse works with subcommands was also new and required careful structuring.  
-Additionally, working with FastAPI was challenging since I had just started learning it, but it helped me understand how to build and expose API endpoints.  
+The most challenging part was setting up the PostgreSQL connection and making sure the environment variables matched the Docker configuration.
+I initially faced issues with database authentication and had to reset the Docker volume to fix it.
+Understanding how argparse works with subcommands was also new and required careful structuring.
+Additionally, working with FastAPI was challenging since I had just started learning it, but it helped me understand how to build and expose API endpoints.
 Overall, integrating the CLI, database, and API together helped me better understand how backend systems work.
