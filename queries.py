@@ -1,15 +1,21 @@
+import psycopg
+import psycopg.errors
 from db import get_connection
 
 
 def create_mentee(full_name: str, email: str, cohort: str) -> int:
-    with get_connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("""
-                INSERT INTO mentees (full_name, email, cohort)
-                VALUES (%s, %s, %s)
-                RETURNING id;
-            """, (full_name, email, cohort))
-            return cur.fetchone()[0]
+    try:
+        with get_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO mentees (full_name, email, cohort)
+                    VALUES (%s, %s, %s)
+                    RETURNING id;
+                """, (full_name, email, cohort))
+                return cur.fetchone()[0]
+
+    except psycopg.errors.UniqueViolation:
+        raise ValueError(f"A mentee with email '{email}' already exists.")
 
 
 def list_mentees():
