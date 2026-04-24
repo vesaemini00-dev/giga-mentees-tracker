@@ -59,6 +59,20 @@ http://127.0.0.1:8000/docs
 
 * FastAPI API included
 
+##AI Usage (Example Prompts)
+
+During development, I used AI tools (ChatGPT and Claude) to better understand concepts, debug issues, and improve the implementation.
+
+Some example prompts:
+
+How should I structure a Python project with CLI and PostgreSQL?
+How do I implement CRUD operations using psycopg?
+How can I create a transaction that inserts an assessment with multiple scores?
+How do I build FastAPI endpoints using request body validation (Pydantic)?
+Why am I getting an email-validator error when using EmailStr?
+How do I properly set up and use a Python virtual environment?
+How do I test FastAPI endpoints using the /docs interface?
+
 ## What Was Challenging
 
 The most challenging part was setting up the PostgreSQL connection and making sure the environment variables matched the Docker configuration.
